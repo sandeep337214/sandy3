@@ -1,0 +1,172 @@
+/* Common styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(59, 208, 57);
+}
+
+.container {
+  padding: 20px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background: #555;
+}
+
+/* Navbar */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+/* Profile */
+.profile {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.profile h2 {
+  margin-top: 0;
+}
+
+/* About */
+.about {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.about h2 {
+  margin-top: 0;
+}
+
+/* Vehicle slides */
+.slides {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.slide {
+  background-color: #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  min-width: 200px;
+  flex: 0 0 auto;
+  transition: background-color 0.3s;
+}
+
+.slide:hover {
+  background-color: #ccc;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .slides {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 19px;
+  border: none;
+  border-radius: 20px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+button:hover {
+  background-color: red;
+}

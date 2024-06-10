@@ -1,0 +1,106 @@
+/* Common styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ff9f1c;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Navbar */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+/* Profile */
+.profile {
+  background-color: #ff9f1c;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile h2 {
+  margin-top: 0;
+  color: #fff;
+}
+
+/* About */
+.about {
+  background-color: #2ec4b6;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+  margin-top: 0;
+  color: #fff;
+}
+
+/* Vehicle slides */
+.slides {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.slide {
+  background-color: #ff6b6b;
+  padding: 20px;
+  border-radius: 5px;
+  min-width: 200px;
+  flex: 0 0 auto;
+  transition: background-color 0.3s;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slide:hover {
+  background-color: #ff4d4d;
+}
+
+/* Logout button */
+.logout-btn {
+ 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #560bad;
+}

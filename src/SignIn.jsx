@@ -65,6 +65,11 @@ const SignIn = () => {
       <div style={{ marginTop: "20px" }}>
         <Link to="/forgot-password">Forgot Password?</Link>
       </div>
+      <div style={{ marginTop: "20px" }}>
+        <Link to="/register">
+          <button type="button">Register</button>
+        </Link>
+      </div>
     </div>
   );
 };

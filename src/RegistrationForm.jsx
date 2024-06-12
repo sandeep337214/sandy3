@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "./AuthContext";
 import './App.css';
-
-const users = [];
 
 const RegistrationForm = () => {
   const [name, setName] = useState("");
@@ -10,6 +9,13 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
+  const { isAuthenticated } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/landing");
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,6 +23,7 @@ const RegistrationForm = () => {
       alert("Passwords do not match");
       return;
     }
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
     if (users.find(user => user.email === email)) {
       alert("Email already registered");
       return;

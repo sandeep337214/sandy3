@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { AuthContext } from "./AuthContext";
 import './App.css';
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { isAuthenticated, login } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/landing");
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -22,6 +30,7 @@ const SignIn = () => {
       (user) => user.email === email && user.password === password
     );
     if (user) {
+      login(user);
       alert("Sign-in successful");
       navigate("/landing");
     } else {

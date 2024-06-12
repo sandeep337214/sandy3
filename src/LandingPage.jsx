@@ -1,16 +1,16 @@
-// LandingPage.js
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "./Navbar";
 import Profile from "./Profile";
 import About from "./About";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "./AuthContext";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const { logout } = useContext(AuthContext);
 
   const handleLogout = () => {
-    // Implement logout logic here (clear session, token, etc.)
-    // For now, let's just redirect to the sign-in page
+    logout();
     navigate("/signin");
   };
 

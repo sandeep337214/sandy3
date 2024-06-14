@@ -1,15 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "./AuthContext";
 import "./App.css";
 
 const NewLandingPage = () => {
+  const { isAuthenticated } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/landing");
+    }
+  }, [isAuthenticated, navigate]);
+
   return (
     <div className="container">
-      <h1>Welcome to Store</h1>
+      <h1>PAYNOW ALERTS..</h1>
       <h2 style={{ color: "red", fontFamily: "sans-serif" }}>
-        That purpose, is defined by the Company at its growth stage for you.
+      A PayNow user of a participating bank/NFI
       </h2>
-     
       <p>Please select an option:</p>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Link to="/signin">

@@ -19,9 +19,9 @@ const LandingPage = () => {
       <div>
         <Navbar />
         <center>
-          <h1 style={{ color: "red" }}>Welcome to the Cars showroom..</h1>
+          <h1 style={{ color: "red" }}>PAYNOW ALERTS..</h1>
           <p style={{ backgroundColor: "pink", color: "blue", height: "20px" }}>
-            Latest models available here
+          PayNow is an electronic fund transfer service that allows you to transfer SGD funds1 instantly to a payee
           </p>
         </center>
 
@@ -34,16 +34,16 @@ const LandingPage = () => {
       <div>
         {/* Other content */}
         <div className="container">
-          <h2>Our Vehicles</h2>
+          <h2>Our Branches</h2>
           <div className="slides">
             <div className="slide">
-              <img src="car1.jpg" alt="Car 1" />
+              <img src="singapore.jpg" alt="singapore" />
             </div>
             <div className="slide">
-              <img src="car2.jpg" alt="Car 2" />
+              <img src=" DBS Bank/POSB.jpg" alt="DBS Bank/POSB" />
             </div>
             <div className="slide">
-              <img src="car3.jpg" alt="Car 3" />
+              <img src="Standard Chartered Bank.jpg" alt="Standard Chartered Bank" />
             </div>
           </div>
         </div>

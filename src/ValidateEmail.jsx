@@ -12,13 +12,17 @@ const ValidateEmail = () => {
     const pendingUser = JSON.parse(localStorage.getItem("pendingUser"));
     if (pendingUser && emailValidator.validate(pendingUser.email)) {
       setEmail(pendingUser.email);
-      const otp = Math.floor(1000 + Math.random() * 9000).toString();
-      alert(`Your OTP is: ${otp}`);
-      setGeneratedOtp(otp);
+      generateAndSendOtp();
     } else {
       navigate("/register");
     }
   }, [navigate]);
+
+  const generateAndSendOtp = () => {
+    const otp = Math.floor(1000 + Math.random() * 9000).toString();
+    alert(`Your OTP is: ${otp}`);
+    setGeneratedOtp(otp);
+  };
 
   const handleOtpChange = (e) => {
     setOtp(e.target.value);
@@ -39,6 +43,10 @@ const ValidateEmail = () => {
     }
   };
 
+  const handleResendOtp = () => {
+    generateAndSendOtp();
+  };
+
   return (
     <div style={{ padding: "20px" }}>
       <h2>Validate Email</h2>
@@ -47,14 +55,19 @@ const ValidateEmail = () => {
           <label>Email:</label>
           <input type="email" value={email} disabled />
         </div>
-        <div>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <label>OTP:</label>
           <input
             type="text"
             value={otp}
             onChange={handleOtpChange}
+            placeholder="Enter OTP"
             required
+            style={{ marginRight: "10px" }}
           />
+          <button type="button" onClick={handleResendOtp} style={{ marginLeft: "10px" }}>
+            Resend OTP
+          </button>
         </div>
         <button type="submit">Validate</button>
       </form>

@@ -1,11 +1,10 @@
-// PublicRoute.js
 import React, { useContext } from "react";
 import { Navigate } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
 
-const PublicRoute = ({ element }) => {
+const PublicRoute = ({ children }) => {
   const { isAuthenticated } = useContext(AuthContext);
-  return !isAuthenticated ? element : <Navigate to="/landing" />;
+  return !isAuthenticated ? children : <Navigate to="/landing" />;
 };
 
 export default PublicRoute;

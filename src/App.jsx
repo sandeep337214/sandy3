@@ -4,7 +4,7 @@ import RegistrationForm from "./RegistrationForm";
 import ValidateEmail from "./ValidateEmail";
 import SignIn from "./SignIn";
 import LandingPage from "./LandingPage";
-import RequestPasswordReset from "./component/RequesPasswordReset";
+import RequestPasswordReset from "./RequestPasswordReset";
 import ResetPassword from "./ResetPassword";
 import NewLandingPage from "./NewLandingPage";
 import AuthProvider from "./AuthContext";
@@ -15,13 +15,13 @@ const App = () => {
   return (
     <AuthProvider>
       <Routes>
-        <Route path="/Newlanding" element={<NewLandingPage />} />
-        <Route path="/register" element={<PublicRoute element={<RegistrationForm />} />} />
-        <Route path="/validate-email" element={<ValidateEmail />} />
-        <Route path="/signin" element={<PublicRoute element={<SignIn />} />} />
-        <Route path="/" element={<PrivateRoute element={<LandingPage />} />} />
-        <Route path="/forgot-password" element={<RequestPasswordReset/>}/>
-        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/" element={<PublicRoute><NewLandingPage /></PublicRoute>} />
+        <Route path="/register" element={<PublicRoute><RegistrationForm /></PublicRoute>} />
+        <Route path="/validate-email" element={<PublicRoute><ValidateEmail /></PublicRoute>} />
+        <Route path="/signin" element={<PublicRoute><SignIn /></PublicRoute>} />
+        <Route path="/landing" element={<PrivateRoute><LandingPage /></PrivateRoute>} />
+        <Route path="/forgot-password" element={<PublicRoute><RequestPasswordReset /></PublicRoute>} />
+        <Route path="/reset-password" element={<PublicRoute><ResetPassword /></PublicRoute>} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </AuthProvider>
